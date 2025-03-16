@@ -2,13 +2,17 @@
 
 Frida Xcaret Vargas Trejo
 
-##Descripción. 
-Elven #30
-- Parma - Quenya for "Book".
-- Pelargir - Sindarin word for 'Garth of Royal Ships'.
-- Peredhel - Sindarin word for half-elvish or half-elf.
-- Palantíri is a Quenyan word that means 'Far seeing'. It is the root of Palantir, or the Seeing-Stones.
-- Parf - Sindarin, See Parma
+## Descripción  
+Elven #30  
+- **Parma** - Quenya para "Book".  
+- **Pelargir** - Sindarin word for "Garth of Royal Ships".  
+- **Peredhel** - Sindarin word for "Half-elvish" o "Half-elf".  
+- **Palantíri** - Quenyan word que significa "Far seeing", raíz de Palantir o los Seeing-Stones.  
+- **Parf** - Sindarin, ver *Parma*.  
+
 ---
-  
-Expresión regular: (^p (ar (ma|f)) | (e (largir|rednell)) |alantiri)
+
+### Expresión regular  
+```regex
+(^p (ar (ma|f)) | (e (largir|rednell)) |alantiri)
+

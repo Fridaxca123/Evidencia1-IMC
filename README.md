@@ -18,3 +18,9 @@ Las palabras que elegí para modelar son:
 ```regex
 (^p (ar (ma|f)) | (e (largir|rednell)) |alantiri)
 
+---
+
+### Referncias:
+
+
+

@@ -25,7 +25,7 @@ Cualquier carater que no este incluido en el alfabeto o en las transiciones del 
 Este es el automata: 
 
 ```
-(^p) (ar(ma|f) | e(largir|redhel) | alantíri)
+(^p)(a(lantíri) | r(ma|f) | e(largir|redhel))
 ```
 
 ---

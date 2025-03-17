@@ -27,7 +27,7 @@ Este es el automata:
 ```
 (^p)(a(lantíri) | r(ma|f) | e(largir|redhel))
 ```
-
+![Autómata](/Evidencia1-IMC/automata.png)
 ---
 
 ### Referencias

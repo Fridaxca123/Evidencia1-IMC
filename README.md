@@ -3,8 +3,9 @@
 Frida Xcaret Vargas Trejo - A01707168
 
 ## Descripción  
-El lenguaje que yo elegí se llama Eleven 
-Elven #30  
+El lenguaje que yo elegí se llama Elven, también llamadas lenguas élficas.  Las lenguas élficas es un conjunto de idiomas ficticios creado por el escritor J.R.R. Tolkien para sus obras como EL señor de los anillos. Entre estas lenguas destaca el Quenya y Sindarin. 
+
+Las palabras que elegí para modelar son: 
 - **Parma** - Quenya para "Book".  
 - **Pelargir** - Sindarin word for "Garth of Royal Ships".  
 - **Peredhel** - Sindarin word for "Half-elvish" o "Half-elf".  

@@ -1,11 +1,11 @@
 # Evidencia 1: Implementación de métodos computacionales. 
 
-Frida Xcaret Vargas Trejo - A01707168
+Frida Xcaret Vargas Trejo - A01707168  
 
 ## Descripción  
-El lenguaje que yo elegí se llama Elven, también llamadas lenguas élficas.  Las lenguas élficas es un conjunto de idiomas ficticios creado por el escritor J.R.R. Tolkien para sus obras como EL señor de los anillos. Entre estas lenguas destaca el Quenya y Sindarin, que estan basadas en el finlandés, latín y gales. 
+El lenguaje que yo elegí se llama Elven, también llamadas lenguas élficas. Las lenguas élficas son un conjunto de idiomas ficticios creados por el escritor J.R.R. Tolkien para sus obras como *El Señor de los Anillos*. Entre estas lenguas destacan el Quenya y el Sindarin, que están basadas en el finlandés, latín y galés.  
 
-Las palabras que elegí para modelar son: 
+Las palabras que elegí para modelar son:  
 - **Parma** - Quenya para "Book".  
 - **Pelargir** - Sindarin word for "Garth of Royal Ships".  
 - **Peredhel** - Sindarin word for "Half-elvish" o "Half-elf".  
@@ -15,12 +15,14 @@ Las palabras que elegí para modelar son:
 ---
 
 ### Expresión regular  
-```regex
-(^p (ar (ma|f)) | (e (largir|rednell)) |alantiri)
+
+^(Par(ma|f)|Pelargir|Peredhel|Palantíri)$
 
 ---
 
-### Referncias:
+### Referencias
+- Wikipedia Contributors. “Elvish Languages.” Wikipedia, Wikimedia Foundation, 22 Apr. 2024.
+
 
 
 

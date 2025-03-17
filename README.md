@@ -14,7 +14,13 @@ Las palabras que elegí para modelar son:
 
 ---
 
-### Expresión regular  
+### Modelos
+
+Genere un atomata para todos los lenguajes, ya que el automata es válido para las cinco palabras del lenguaje. Es impotante mencionar que el automata solo es valido para el siguiente alfabeto. 
+∑ = a, d, e, f, g, h, i, í, l, m, n, p, r, t.
+Cualquier carater que no este incluido en el alfabeto o en las transiciones del automata no será aceptado. 
+Este es el automata: 
+
 
 ^(Par(ma|f)|Pelargir|Peredhel|Palantíri)$
 

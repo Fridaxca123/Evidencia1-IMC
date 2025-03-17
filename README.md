@@ -21,10 +21,11 @@ Genere un atomata para todos los lenguajes, ya que el automata es válido para l
 ∑ = a, d, e, f, g, h, i, í, l, m, n, p, r, t.
 
 Cualquier carater que no este incluido en el alfabeto o en las transiciones del automata no será aceptado. 
+
 Este es el automata: 
 
 ```
-(^p)(ar(ma|f) | e(largir | redhel) | alantíri)
+(^p) (ar(ma|f) | e(largir|redhel) | alantíri)
 ```
 
 ---

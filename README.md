@@ -23,8 +23,9 @@ Genere un atomata para todos los lenguajes, ya que el automata es válido para l
 Cualquier carater que no este incluido en el alfabeto o en las transiciones del automata no será aceptado. 
 Este es el automata: 
 
-
-^(Par(ma|f)|Pelargir|Peredhel|Palantíri)$
+```
+(^p)(ar(ma|f) | e(largir | redhel) | alantíri)
+```
 
 ---
 

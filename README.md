@@ -25,8 +25,6 @@ Los autómatas finitos son una de las formas más simples de reconocer patrones.
 
 Para este proyecto, decidí utilizar un **DFA** porque únicamente necesito que el autómata reconozca cinco palabras específicas. Esto simplifica la implementación, ya que puedo definir una ruta única para cada palabra, haciendo innecesario el uso de un NFA.
 
----
-
 ## Modelos
 
 Generé un único autómata que es válido para las cinco palabras del lenguaje. Es importante mencionar que este autómata solo acepta el siguiente alfabeto:
@@ -43,10 +41,13 @@ Cualquier carácter que no esté incluido en el alfabeto o en las transiciones d
 
 ![Autómata](/automata.png)
 
----
 
 ## Implementación
-
+Utilicé el autómata para crear una base de conocimiento en Prolog para implementar mi análisis léxico. La base de conocimiento tiene el estado inicial, el estado siguiente y el símbolo que se mueve de un estado a otro. Esto se modela de la siguiente manera:
+```
+mover(EstadoInicial, SiguienteEstado, Simbolo).
+```
+## Pruebas
 El programa está implementado en **Prolog**. Para ejecutar el autómata, abre el archivo `elvish.pl` en un entorno compatible con Prolog o en una terminal de Prolog. 
 
 Para abrir el archivo, ejecuta:
@@ -54,10 +55,6 @@ Para abrir el archivo, ejecuta:
 ```
 [ruta/al/archivo/elvish.pl].
 ```
-
----
-
-## Pruebas
 
 ### Pruebas exitosas
 
@@ -79,13 +76,7 @@ Estas son palabras similares a las del idioma, pero que no están incluidas en e
 4. Palantiri
 5. Par
 
-### Cómo ejecutar una prueba
-
-Para verificar una palabra, utiliza el siguiente formato de comando en Prolog:
-
-```
-iniciar_automata([letra1, letra2, letra3, ...]).
-```
+Las pruebas en sí tienen el resultado esperado y el resultado que da Prolog. Es importante mencionar que estas funciones a continuación tienen algo similar a este comando: iniciar_automata([p, a, r, m, a]). Esto significa que si desea ejecutar una palabra diferente a las palabras anteriores, ejecute iniciar_automata([palabra).. donde palabra-a-verificar es la palabra escrita en letras, y cada letra está separada por una coma.
 
 Por ejemplo, para probar la palabra *hola*, debes ejecutar:
 

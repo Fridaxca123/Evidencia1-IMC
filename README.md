@@ -25,6 +25,7 @@ Los autómatas finitos son una de las formas más simples de reconocer patrones.
 
 Para este proyecto, decidí utilizar un **DFA** porque únicamente necesito que el autómata reconozca cinco palabras específicas. Esto simplifica la implementación, ya que puedo definir una ruta única para cada palabra, haciendo innecesario el uso de un NFA.
 
+
 ## Modelos
 
 Generé un único autómata que es válido para las cinco palabras del lenguaje. Es importante mencionar que este autómata solo acepta el siguiente alfabeto:
@@ -99,8 +100,9 @@ Por ejemplo, para probar la palabra *hola*, debes ejecutar:
 ```
 iniciar_automata([h, o, l, a]).
 ```
-
----
+## Analisis
+### Complejidad Temporal
+El programa asimilar a un bucle debido a que utiliza recursión e itera sobre la base de conocimientos (verificando cada hecho una vez). El caso base de la recursión se alcanza cuando la lista del programa está vacía y no se realiza ninguna operación adicional, por lo que se puede decir que el programa tiene un tiempo asintótico de O(n). No existe un bucle anidado y sin importar cuántos hechos haya en la base de conocimiento, siempre se iterará sobre cada uno de ellos una vez, por lo que, en ese aspecto, es seguro decir que la solución del programa es eficiente.
 
 ## Referencias
 

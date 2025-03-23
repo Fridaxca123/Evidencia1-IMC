@@ -102,7 +102,13 @@ iniciar_automata([h, o, l, a]).
 ```
 ## Analisis
 ### Complejidad Temporal
-El programa asimilar a un bucle debido a que utiliza recursión e itera sobre la base de conocimientos (verificando cada hecho una vez). El caso base de la recursión se alcanza cuando la lista del programa está vacía y no se realiza ninguna operación adicional, por lo que se puede decir que el programa tiene un tiempo asintótico de O(n). No existe un bucle anidado y sin importar cuántos hechos haya en la base de conocimiento, siempre se iterará sobre cada uno de ellos una vez, por lo que, en ese aspecto, es seguro decir que la solución del programa es eficiente.
+Debido a que el programa utiliza recursion e itera sobre la base de conocimiento, se asimila a un loop. El caso base de la recursión se completa cuando la lista del programa está vacía y no se realiza ninguna operación adicional, asi que se puede decir que el programa tiene un tiempo asintótico de O(n). No existe un loop anidado y sin importar cuántos hechos haya en la base de conocimiento, siempre se iterará sobre cada uno de ellos una vez, por lo que, en ese aspecto, es seguro decir que la solución del programa es eficiente.
+### Otras soluciones
+### Implementar NFA
+Ya explique previamente que decidi usar DFA por simplicidad principalmente a la hora de programarlos. Sin embargo para el automata debido a las reglas del lenguaje probablemente seria mas facil haber implementado NFA, pero tendria que traducirlo a DFA para programarlo. Considero debido a que solo tenia 5 palabras para modelar el DFA fue la mejor opción. 
+
+### Different programming languages
+
 
 ## Referencias
 

@@ -10,7 +10,15 @@ Las palabras que elegí para modelar son:
 - **Pelargir** - Sindarin word for "Garth of Royal Ships".  
 - **Peredhel** - Sindarin word for "Half-elvish" o "Half-elf".  
 - **Palantíri** - Quenyan word que significa "Far seeing", raíz de Palantir o los Seeing-Stones.  
-- **Parf** - Sindarin, ver *Parma*.  
+- **Parf** - Sindarin, ver *Parma*.
+
+Los autómatas finitos son una de las maneras más simples de reconocer patrones. Existen dos tipos principales de autómatas: los DFA y los NFA.
+
+Los Deterministic Finite Automata (DFA) se caracterizan porque, para cada estado y símbolo de entrada, solo existe una transición a otro estado. Por ejemplo, si hay una letra 'a', solo hay un estado al que se puede acceder con esa entrada.
+
+Por otro lado, los Non-Deterministic Finite Automata (NFA) se diferencian en dos aspectos: aceptan transiciones vacías  y permiten múltiples transiciones para un mismo símbolo de entrada.
+
+Basándome en esta información, decidí utilizar un DFA para mi propósito, ya que solo necesito que el autómata acepte cinco palabras. Puedo crear una ruta específica para cada una de las palabras, lo que hace innecesario el uso de un NFA.
 
 ---
 
@@ -32,6 +40,7 @@ Este es el automata:
 
 ### Referencias
 - Wikipedia Contributors. “Elvish Languages.” Wikipedia, Wikimedia Foundation, 22 Apr. 2024.
+- GeeksforGeeks. “Introduction of Finite Automata.” GeeksforGeeks, 9 July 2015, www.geeksforgeeks.org/introduction-of-finite-automata/.
 
 
 

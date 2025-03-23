@@ -1,65 +1,105 @@
-# Evidencia 1: Implementación de métodos computacionales. 
+# Evidencia 1: Implementación de métodos computacionales
 
-Frida Xcaret Vargas Trejo - A01707168  
+**Frida Xcaret Vargas Trejo - A01707168**
 
-## Descripción  
-El lenguaje que yo elegí se llama Elven, también llamadas lenguas élficas. Las lenguas élficas son un conjunto de idiomas ficticios creados por el escritor J.R.R. Tolkien para sus obras como *El Señor de los Anillos*. Entre estas lenguas destacan el Quenya y el Sindarin, que están basadas en el finlandés, latín y galés.  
+## Descripción
 
-Las palabras que elegí para modelar son:  
-- **Parma** - Quenya para "Book".  
-- **Pelargir** - Sindarin word for "Garth of Royal Ships".  
-- **Peredhel** - Sindarin word for "Half-elvish" o "Half-elf".  
-- **Palantíri** - Quenyan word que significa "Far seeing", raíz de Palantir o los Seeing-Stones.  
-- **Parf** - Sindarin, ver *Parma*.
+El lenguaje que yo elegí se llama *Elven*, también conocido como lenguas élficas. Estas lenguas son un conjunto de idiomas ficticios creados por el escritor J.R.R. Tolkien para sus obras, como *El Señor de los Anillos*. Entre las más destacadas se encuentran el **Quenya** y el **Sindarin**, las cuales están inspiradas en el finlandés, latín y galés.
 
-Los autómatas finitos son una de las maneras más simples de reconocer patrones. Existen dos tipos principales de autómatas: los DFA y los NFA.
+### Palabras modeladas
 
-Los Deterministic Finite Automata (DFA) se caracterizan porque, para cada estado y símbolo de entrada, solo existe una transición a otro estado. Por ejemplo, si hay una letra 'a', solo hay un estado al que se puede acceder con esa entrada.
+Las palabras que elegí para modelar en el autómata son las siguientes:
 
-Por otro lado, los Non-Deterministic Finite Automata (NFA) se diferencian en dos aspectos: aceptan transiciones vacías  y permiten múltiples transiciones para un mismo símbolo de entrada.
+- **Parma**: Quenya para "Libro" ("Book").
+- **Pelargir**: Sindarin para "Garth of Royal Ships" ("Puerto de las Naves Reales").
+- **Peredhel**: Sindarin para "Half-elvish" o "Half-elf" ("Medio-elfo").
+- **Palantíri**: Quenya para "Far seeing" ("Visión lejana"), hace referencia a las piedras videntes (*Seeing-Stones*).
+- **Parf**: Variante en Sindarin de "Parma" ("Libro").
 
-Basándome en esta información, decidí utilizar un DFA para mi propósito, ya que solo necesito que el autómata acepte cinco palabras. Puedo crear una ruta específica para cada una de las palabras, lo que hace innecesario el uso de un NFA.
+### DFA vs. NFA
+
+Los autómatas finitos son una de las formas más simples de reconocer patrones. Existen dos tipos principales:
+
+- **DFA (Deterministic Finite Automata)**: Por cada estado y símbolo de entrada, solo existe una transición posible a otro estado.
+- **NFA (Non-Deterministic Finite Automata)**: Permite múltiples transiciones para el mismo símbolo de entrada y acepta transiciones vacías.
+
+Para este proyecto, decidí utilizar un **DFA** porque únicamente necesito que el autómata reconozca cinco palabras específicas. Esto simplifica la implementación, ya que puedo definir una ruta única para cada palabra, haciendo innecesario el uso de un NFA.
 
 ---
 
-### Modelos
+## Modelos
 
-Genere un atomata para todos los lenguajes, ya que el automata es válido para las cinco palabras del lenguaje. Es impotante mencionar que el automata solo es valido para el siguiente alfabeto. 
+Generé un único autómata que es válido para las cinco palabras del lenguaje. Es importante mencionar que este autómata solo acepta el siguiente alfabeto:
 
-∑ = a, d, e, f, g, h, i, í, l, m, n, p, r, t.
+**∑ = {a, d, e, f, g, h, i, í, l, m, n, p, r, t}**
 
-Cualquier carater que no este incluido en el alfabeto o en las transiciones del automata no será aceptado. 
+Cualquier carácter que no esté incluido en el alfabeto o en las transiciones del autómata no será aceptado.
 
-Este es el automata: 
+### Expresión regular del autómata:
 
 ```
 (^p)(a(lantíri) | r(ma|f) | e(largir|redhel))
 ```
+
 ![Autómata](/automata.png)
----
-### Implementación
-llll
 
 ---
-### Pruebas
-Para correr el programa abra elvish.pl en Prolog. 
-### Pruebas exitosas 
+
+## Implementación
+
+El programa está implementado en **Prolog**. Para ejecutar el autómata, abre el archivo `elvish.pl` en un entorno compatible con Prolog o en una terminal de Prolog. 
+
+Para abrir el archivo, ejecuta:
+
+```
+[ruta/al/archivo/elvish.pl].
+```
+
+---
+
+## Pruebas
+
+### Pruebas exitosas
+
+A continuación se presentan las palabras que deberían ser aceptadas por el autómata, ya que están definidas en el lenguaje:
+
 1. Parma
 2. Pelargir
 3. Peredhel
-4. Palant1ri
+4. Palantíri
 5. Parf
+
 ### Pruebas fallidas
+
+Estas son palabras similares a las del idioma, pero que no están incluidas en el lenguaje definido por el autómata. Por lo tanto, el programa debería devolver `falso` al procesarlas:
+
 1. Parme
-2. Hello
+2. Pelargr
 3. Peredel
 4. Palantiri
 5. Par
 
+### Cómo ejecutar una prueba
+
+Para verificar una palabra, utiliza el siguiente formato de comando en Prolog:
+
+```
+iniciar_automata([letra1, letra2, letra3, ...]).
+```
+
+Por ejemplo, para probar la palabra *hola*, debes ejecutar:
+
+```
+iniciar_automata([h, o, l, a]).
+```
+
 ---
-### Referencias
-- Wikipedia Contributors. “Elvish Languages.” Wikipedia, Wikimedia Foundation, 22 Apr. 2024.
-- GeeksforGeeks. “Introduction of Finite Automata.” GeeksforGeeks, 9 July 2015, www.geeksforgeeks.org/introduction-of-finite-automata/.
+
+## Referencias
+
+- Wikipedia Contributors. “Elvish Languages.” *Wikipedia*, Wikimedia Foundation, 22 de abril de 2024.
+- GeeksforGeeks. “Introduction of Finite Automata.” *GeeksforGeeks*, 9 de julio de 2015. [Enlace](https://www.geeksforgeeks.org/introduction-of-finite-automata/)
+
 
 
 

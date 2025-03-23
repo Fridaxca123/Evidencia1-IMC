@@ -37,7 +37,15 @@ Este es el automata:
 ```
 ![Autómata](/automata.png)
 ---
+### Implementación
+llll
 
+---
+### Pruebas
+Para correr el programa abra elvish.pl en Prolog. 
+
+
+---
 ### Referencias
 - Wikipedia Contributors. “Elvish Languages.” Wikipedia, Wikimedia Foundation, 22 Apr. 2024.
 - GeeksforGeeks. “Introduction of Finite Automata.” GeeksforGeeks, 9 July 2015, www.geeksforgeeks.org/introduction-of-finite-automata/.

@@ -43,9 +43,25 @@ Cualquier carácter que no esté incluido en el alfabeto o en las transiciones d
 
 
 ## Implementación
-Utilicé el autómata para crear una base de conocimiento en Prolog para implementar mi análisis léxico. La base de conocimiento tiene el estado inicial, el estado siguiente y el símbolo que se mueve de un estado a otro. Esto se modela de la siguiente manera:
+Utilicé el autómata para crear una base de conocimiento con estados en Prolog para implementar mi análisis léxico. La base de conocimiento tiene el estado inicial, el estado siguiente y el símbolo que se mueve de un estado a otro. Esto se modela de la siguiente manera:
 ```
 mover(EstadoInicial, SiguienteEstado, Simbolo).
+```
+También existe una regla adicional que es el estado aceptado. Mi autómata solo tiene un estado aceptado:
+```
+estado_de_aceptacion(w).
+```
+El resto del código tiene una regla auxiliar que llama a la regla recursiva:
+```
+iniciar_automata(ChecarLista) :-
+```
+Caso base: 
+```
+verificar_automata([], EstadoInicial) :-
+```
+Regla recursiva: 
+```
+verificar_automata([Simbolo | RestoLista], EstadoInicial) :-
 ```
 ## Pruebas
 El programa está implementado en **Prolog**. Para ejecutar el autómata, abre el archivo `elvish.pl` en un entorno compatible con Prolog o en una terminal de Prolog. 

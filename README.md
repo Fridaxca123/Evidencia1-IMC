@@ -43,7 +43,18 @@ llll
 ---
 ### Pruebas
 Para correr el programa abra elvish.pl en Prolog. 
-
+### Pruebas exitosas 
+1. Parma
+2. Pelargir
+3. Peredhel
+4. Palant1ri
+5. Parf
+### Pruebas fallidas
+1. Parme
+2. Hello
+3. Peredel
+4. Palantiri
+5. Par
 
 ---
 ### Referencias

@@ -89,12 +89,6 @@ verificar_automata([Simbolo | RestoLista], EstadoInicial) :-
 ## Pruebas
 El programa está implementado en **Prolog**. Para ejecutar el autómata, abre el archivo `elvish.pl` en un entorno compatible con Prolog o en una terminal de Prolog. 
 
-Para abrir el archivo, ejecuta:
-
-```
-[ruta/al/archivo/elvish.pl].
-```
-
 ### Pruebas exitosas
 
 A continuación se presentan las palabras que deberían ser aceptadas por el autómata, ya que están definidas en el lenguaje:

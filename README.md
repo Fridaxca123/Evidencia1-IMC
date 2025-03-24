@@ -124,7 +124,7 @@ iniciar_automata([h, o, l, a]).
 ```
 ## Analisis
 ### Complejidad Temporal y espacial
-Debido a que el programa utiliza recursion e itera sobre la base de conocimiento, se asimila a un loop. El caso base de la recursión se completa cuando la lista del programa está vacía y no se realiza ninguna operación adicional, asi que se puede decir que el programa tiene un tiempo asintótico de O(n). No existe un loop anidado y sin importar cuántos hechos haya en la base de conocimiento, siempre se iterará sobre cada uno de ellos una vez, por lo que, en ese aspecto, es seguro decir que la solución del programa es eficiente.
+Debido a que el programa utiliza recursion e itera sobre la base de conocimiento, se asimila a un loop. El caso base de la recursión se completa cuando la lista del programa está vacía y no se realiza ninguna operación adicional, asi que se puede decir que el programa tiene una complejidad temporal de O(n). No existe un loop anidado y sin importar cuántos hechos haya en la base de conocimiento, siempre se iterará sobre cada uno de ellos una vez, por lo que, en ese aspecto, es seguro decir que la solución del programa es eficiente. Asimismo la complejidad espacial es de O (n) porque el programa guarda n elementos en la pila mientras recorre la lista.
 
 ## Referencias
 

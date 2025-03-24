@@ -25,6 +25,15 @@ Los autómatas finitos son una de las formas más simples de reconocer patrones.
 
 Para este proyecto, decidí utilizar un **DFA** porque únicamente necesito que el autómata reconozca cinco palabras específicas. Esto simplifica la implementación, ya que puedo definir una ruta única para cada palabra, haciendo innecesario el uso de un NFA.
 
+Un Automata Finito Deterministico (AFD) consta de:
+
+Un **conjunto finito de estados** -> Q
+Un **alfabeto** (conjunto de simbolos o letras) -> Σ
+**Transiciones** -> δ
+Un **estado inicial**
+Uno o más **estados finales**.
+
+Se representa gráficamente con un grafo, donde los nodos son los estados y las flechas las transiciones. Cada transición está etiquetada con un símbolo del alfabeto representando su condición para realizar la transición.
 
 ## Modelos
 
@@ -34,15 +43,28 @@ Generé un único autómata que es válido para las cinco palabras del lenguaje.
 
 Cualquier carácter que no esté incluido en el alfabeto o en las transiciones del autómata no será aceptado.
 
-### Expresión regular del autómata:
-
-```
-(^p)(a(lantíri) | r(ma|f) | e(largir|redhel))
-```
-
 ![Autómata](/automata.png)
 
-
+### Expresión regular del autómata:
+Otra forma de representar un automata es usando las expresiones regulares.
+```
+^(p(a(lantíri) | r(ma|f) | e(largir|redhel)))+$
+```
+### Desglose
+- ^: La cadena debe iniciar con cualquier palabra formada en (...).
+- +$: La cadena puede terminar varias veces con cualquier palabra formada en (...).
+- p: La cadena debe iniciar con la letra "p".
+- a: Después de la "p", puede venir la letra "a".
+  - (lantíri): Si viene una "a", debe continuar con la palabra "lantíri". (Ejemplo: "palantíri")
+- r: Después de la "a", puede venir la letra "r".
+  - (ma|f): Si viene una "r", puede continuar con:
+    - "ma" (Ejemplo: "parma")
+    - "f" (Ejemplo: "parf")
+- e: Después de la "p", puede venir la letra "e".
+  - (largir|redhel): Si viene una "e", puede continuar con:
+    - "largir" (Ejemplo: "pelargir")
+    - "redhel" (Ejemplo: "peredhel")
+  
 ## Implementación
 Utilicé el autómata para crear una base de conocimiento con estados en Prolog para implementar mi análisis léxico. La base de conocimiento tiene el estado inicial, el estado siguiente y el símbolo que se mueve de un estado a otro. Esto se modela de la siguiente manera:
 ```
@@ -101,20 +123,14 @@ Por ejemplo, para probar la palabra *hola*, debes ejecutar:
 iniciar_automata([h, o, l, a]).
 ```
 ## Analisis
-### Complejidad Temporal
+### Complejidad Temporal y espacial
 Debido a que el programa utiliza recursion e itera sobre la base de conocimiento, se asimila a un loop. El caso base de la recursión se completa cuando la lista del programa está vacía y no se realiza ninguna operación adicional, asi que se puede decir que el programa tiene un tiempo asintótico de O(n). No existe un loop anidado y sin importar cuántos hechos haya en la base de conocimiento, siempre se iterará sobre cada uno de ellos una vez, por lo que, en ese aspecto, es seguro decir que la solución del programa es eficiente.
-
-### Implementar NFA
-Ya explique previamente que decidi usar DFA por simplicidad principalmente a la hora de programarlos. Sin embargo para el automata debido a las reglas del lenguaje probablemente seria mas facil haber implementado NFA, pero tendria que traducirlo a DFA para programarlo. Considero debido a que solo tenia 5 palabras para modelar el DFA fue la mejor opción. 
-
-### Otras soluciones
-Para consultar otras soluciones recurri a CHATGPT el cual optaba por una solución en python usandon NFA. Esta solución usqaba un loop en lugar de recursión
-
 
 ## Referencias
 
 - Wikipedia Contributors. “Elvish Languages.” *Wikipedia*, Wikimedia Foundation, 22 de abril de 2024.
 - GeeksforGeeks. “Introduction of Finite Automata.” *GeeksforGeeks*, 9 de julio de 2015. [Enlace](https://www.geeksforgeeks.org/introduction-of-finite-automata/)
+- “Regular Expressions, Regular Grammar and Regular Languages - GeeksforGeeks.” GeeksforGeeks, 7 Feb. 2019, www.geeksforgeeks.org/regular-expressions-regular-grammar-and-regular-languages/.
 
 
 

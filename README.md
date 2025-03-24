@@ -50,7 +50,7 @@ Mi automata ahora me permite:
 -Generar las palabras -> parma|parf|pelargir|peredhel|palantíri|
 
 ### Expresión regular del autómata:
-Otra forma de representar un automata es usando las expresiones regulares[3].
+Otra forma de representar un automata es usando las expresiones regulares. Las expresiones regulares son un equivalente algebraico para un autómata, puede definir exactamente los mismos lenguajes que los autómatas pueden describir: Lenguajes regulares.[3]
 ```
 (^p(a((lantíri) | r(ma|f)) | e(largir|redhel)))
 ```

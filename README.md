@@ -4,7 +4,7 @@
 
 ## Descripción
 
-El lenguaje que yo elegí se llama *Elven*, también conocido como lenguas élficas. Estas lenguas son un conjunto de idiomas ficticios creados por el escritor J.R.R. Tolkien para sus obras, como *El Señor de los Anillos*. Entre las más destacadas se encuentran el **Quenya** y el **Sindarin**, las cuales están inspiradas en el finlandés, latín y galés.
+El lenguaje que yo elegí se llama *Elven*, también conocido como lenguas élficas. Estas lenguas son un conjunto de idiomas ficticios creados por el escritor J.R.R. Tolkien para sus obras, como *El Señor de los Anillos*. "Entre las más destacadas se encuentran el **Quenya** y el **Sindarin**, las cuales están inspiradas en el finlandés, latín y galés". [1]
 
 ### Palabras modeladas
 
@@ -18,7 +18,7 @@ Las palabras que elegí para modelar en el autómata son las siguientes:
 
 ### DFA vs. NFA
 
-Los autómatas finitos son una de las formas más simples de reconocer patrones. Existen dos tipos principales:
+Los autómatas finitos son una de las formas más simples de reconocer patrones [2]. Existen dos tipos principales:
 
 - **DFA (Deterministic Finite Automata)**: Por cada estado y símbolo de entrada, solo existe una transición posible a otro estado.
 - **NFA (Non-Deterministic Finite Automata)**: Permite múltiples transiciones para el mismo símbolo de entrada y acepta transiciones vacías.
@@ -27,11 +27,11 @@ Para este proyecto, decidí utilizar un **DFA** porque únicamente necesito que 
 
 Un Automata Finito Deterministico (AFD) consta de:
 
-Un **conjunto finito de estados** -> Q
-Un **alfabeto** (conjunto de simbolos o letras) -> Σ
-**Transiciones** -> δ
-Un **estado inicial**
-Uno o más **estados finales**.
+-Un **conjunto finito de estados** -> Q
+-Un **alfabeto** (conjunto de simbolos o letras) -> Σ
+-**Transiciones** -> δ
+-Un **estado inicial**
+-Uno o más **estados finales**.
 
 Se representa gráficamente con un grafo, donde los nodos son los estados y las flechas las transiciones. Cada transición está etiquetada con un símbolo del alfabeto representando su condición para realizar la transición.
 
@@ -45,15 +45,17 @@ Cualquier carácter que no esté incluido en el alfabeto o en las transiciones d
 
 ![Autómata](/automata.png)
 
+Mi autómata permite reconocer cada palabra de manera individual, pero presenta un problema: no aceptaba secuencias donde una palabra este seguida de otra.
+Mi automata ahora me permite:
+-Generar las palabras -> parma|parf|pelargir|peredhel|palantíri|
+
 ### Expresión regular del autómata:
-Otra forma de representar un automata es usando las expresiones regulares.
+Otra forma de representar un automata es usando las expresiones regulares[3].
 ```
-^(p(a(lantíri) | r(ma|f) | e(largir|redhel)))+$
+(^p(a((lantíri) | r(ma|f)) | e(largir|redhel)))
 ```
 ### Desglose
-- ^: La cadena debe iniciar con cualquier palabra formada en (...).
-- +$: La cadena puede terminar varias veces con cualquier palabra formada en (...).
-- p: La cadena debe iniciar con la letra "p".
+- ^p: La cadena debe iniciar con la letra "p".
 - a: Después de la "p", puede venir la letra "a".
   - (lantíri): Si viene una "a", debe continuar con la palabra "lantíri". (Ejemplo: "palantíri")
 - r: Después de la "a", puede venir la letra "r".
@@ -122,9 +124,9 @@ Debido a que el programa utiliza recursion e itera sobre la base de conocimiento
 
 ## Referencias
 
-- Wikipedia Contributors. “Elvish Languages.” *Wikipedia*, Wikimedia Foundation, 22 de abril de 2024.
-- GeeksforGeeks. “Introduction of Finite Automata.” *GeeksforGeeks*, 9 de julio de 2015. [Enlace](https://www.geeksforgeeks.org/introduction-of-finite-automata/)
-- “Regular Expressions, Regular Grammar and Regular Languages - GeeksforGeeks.” GeeksforGeeks, 7 Feb. 2019, www.geeksforgeeks.org/regular-expressions-regular-grammar-and-regular-languages/.
+- [1] Wikipedia Contributors. “Elvish Languages.” *Wikipedia*, Wikimedia Foundation, 22 de abril de 2024.
+- [2] GeeksforGeeks. “Introduction of Finite Automata.” *GeeksforGeeks*, 9 de julio de 2015. [Enlace](https://www.geeksforgeeks.org/introduction-of-finite-automata/)
+- [3]“Regular Expressions, Regular Grammar and Regular Languages - GeeksforGeeks.” GeeksforGeeks, 7 Feb. 2019, www.geeksforgeeks.org/regular-expressions-regular-grammar-and-regular-languages/.
 
 
 

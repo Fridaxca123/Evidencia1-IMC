@@ -28,9 +28,13 @@ Para este proyecto, decidí utilizar un **DFA** porque únicamente necesito que 
 Un Automata Finito Deterministico (AFD) consta de:
 
 -Un **conjunto finito de estados** -> Q
+
 -Un **alfabeto** (conjunto de simbolos o letras) -> Σ
+
 -**Transiciones** -> δ
+
 -Un **estado inicial**
+
 -Uno o más **estados finales**.
 
 Se representa gráficamente con un grafo, donde los nodos son los estados y las flechas las transiciones. Cada transición está etiquetada con un símbolo del alfabeto representando su condición para realizar la transición.

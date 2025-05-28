@@ -50,8 +50,7 @@ Cualquier carácter que no esté incluido en el alfabeto o en las transiciones d
 ![Autómata](/automata.png)
 
 Mi autómata permite reconocer cada palabra de manera individual, pero presenta un problema: no aceptaba secuencias donde una palabra este seguida de otra.
-Mi automata ahora me permite:
--Generar las palabras -> parma|parf|pelargir|peredhel|palantíri|
+Mi automata ahora me permite generar las palabras -> **parma|parf|pelargir|peredhel|palantíri|**
 
 ### Expresión regular del autómata:
 Otra forma de representar un automata es usando las expresiones regulares. Las expresiones regulares son un equivalente algebraico para un autómata, puede definir exactamente los mismos lenguajes que los autómatas pueden describir: Lenguajes regulares.[3]

@@ -46,11 +46,12 @@ Este automata puede producir numeros que comiencen con 1 y le sigan 0. Como pode
 
 Este automata puede cadenas de este tipo bbabb, también acepta transiciónes nulas. Como podemos observar es un automata finito debido a que existe mas de una transición del mismo simbolo por estado. 
 
-Para este proyecto, implementare el automata para modelar mi lenguaje debido a que este es de Tipo 2 (Gramatica regular). 
 
 ## Modelos
 
-Generé un único autómata que es válido para las cinco palabras del lenguaje. Es importante mencionar que este autómata solo acepta el siguiente alfabeto:
+**Para este proyecto, implementare el automata DFA (debido a que solo son 5 palabras y se opueden implementar estados con una sola transición) y la expresion regular para modelar mi lenguaje debido a que este es de Tipo 2 (Gramatica regular).**
+
+EL primer paso due definir el alfabeto que mi automata aceptara, solo seran validos los siguientes caracteres:
 
 **∑ = {a, d, e, f, g, h, i, í, l, m, n, p, r, t}**
 
@@ -58,22 +59,22 @@ Cualquier carácter que no esté incluido en el alfabeto o en las transiciones d
 
 ![Autómata](/automata.png)
 
-Mi autómata permite reconocer cada palabra de manera individual, pero presenta un problema: no aceptaba secuencias donde una palabra este seguida de otra.
-Mi automata ahora me permite generar las palabras -> **parma|parf|pelargir|peredhel|palantíri|**
+Mi autómata permite reconocer cada palabra de manera individual, pero presenta una limitante: no aceptaba secuencias donde una palabra este seguida de otra.
+Mi automata me permite generar las palabras -> **parma|parf|pelargir|peredhel|palantíri|**
 
 ### Expresión regular del autómata:
-Otra forma de representar un automata es usando las expresiones regulares. Las expresiones regulares son un equivalente algebraico para un autómata, puede definir exactamente los mismos lenguajes que los autómatas pueden describir: Lenguajes regulares.[3]
-```
-(^p(a((lantíri) | r(ma|f)) | e(largir|redhel)))
-```
+Otra forma de representar un automata es usando las expresiones regulares. Las expresiones regulares son un equivalente algebraicoa un autómata, puede definir exactamente los mismos lenguajes que los autómatas pueden describir: Lenguajes regulares.
+
+**(^p(a((lantíri) | r(ma|f)) | e(largir|redhel)))**
+
 ### Desglose
 - ^p: La cadena debe iniciar con la letra "p".
 - a: Después de la "p", puede venir la letra "a".
-  - (lantíri): Si viene una "a", debe continuar con la palabra "lantíri". (Ejemplo: "palantíri")
-- r: Después de la "a", puede venir la letra "r".
-  - (ma|f): Si viene una "r", puede continuar con:
-    - "ma" (Ejemplo: "parma")
-    - "f" (Ejemplo: "parf")
+    - (lantíri): Despue de la "a" puede continuar con "lantíri". (Ejemplo: "palantíri")
+  - r: Después de la "a", puede venir la letra "r".
+    - (ma|f): Si viene una "r", puede continuar con:
+      - "ma" (Ejemplo: "parma")
+      - "f" (Ejemplo: "parf")
 - e: Después de la "p", puede venir la letra "e".
   - (largir|redhel): Si viene una "e", puede continuar con:
     - "largir" (Ejemplo: "pelargir")

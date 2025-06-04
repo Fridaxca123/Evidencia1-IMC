@@ -127,7 +127,7 @@ Estas son palabras similares a las del idioma, pero que no están incluidas en e
 
 ## Analisis
 ### Complejidad Temporal y espacial
-Debido a que el programa utiliza recursion e itera sobre la base de conocimiento, se asimila a un loop. El caso base de la recursión se completa cuando la lista del programa está vacía y no se realiza ninguna operación adicional, asi que se puede decir que el programa tiene una complejidad temporal de O(n). No existe un loop anidado y sin importar cuántos hechos haya en la base de conocimiento, siempre se iterará sobre cada uno de ellos una vez, por lo que, en ese aspecto, es seguro decir que la solución del programa es eficiente. Asimismo la complejidad espacial es de O (n) porque el programa guarda n elementos en la pila mientras recorre la lista.
+Para que el programa verifique si una palabra es parte del lenguaje, debe de iterar por todos los estados esto significa que la complejidad temporal es de O(n), ademas es un a gramatica regular de tipo 3 y estas tienen complejidad de O(n) .Asimismo la complejidad espacial es de O (n) porque el programa guarda n elementos en la pila mientras recorre la lista.
 
 ## Referencias
 

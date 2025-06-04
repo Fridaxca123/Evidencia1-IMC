@@ -82,31 +82,32 @@ Otra forma de representar un automata es usando las expresiones regulares. Las e
   
 ## Implementación
 Utilicé el autómata para crear una base de conocimiento con estados en Prolog para implementar mi análisis léxico. La base de conocimiento tiene el estado inicial, el estado siguiente y el símbolo que se mueve de un estado a otro. Esto se modela de la siguiente manera:
+
 ```
 mover(EstadoInicial, SiguienteEstado, Simbolo).
 ```
-También existe una regla adicional que es el estado aceptado. Mi autómata solo tiene un estado aceptado:
+Definimos el ultimo estado (el aceptado), para mi gramatica solo hay un estado de aceptacion que es el w :
 ```
 estado_de_aceptacion(w).
 ```
-El resto del código tiene una regla auxiliar que llama a la regla recursiva:
+Verifica si los caracteres ingresados estan en la base de conocimiento comienza siempre desde el estado a.
 ```
 iniciar_automata(ChecarLista) :-
 ```
-Caso base: 
+Caso base: El programa continua hasta que ya no mas caracteres, verifica que el estado actual(ultimo) sea el w.
 ```
-verificar_automata([], EstadoInicial) :-
+verificar_automata([], EstadoActual) :-
 ```
-Regla recursiva: 
+Regla recursiva: Divide la lista y va recorriendose a el siguiente estado.
 ```
-verificar_automata([Simbolo | RestoLista], EstadoInicial) :-
+verificar_automata([Simbolo | RestoLista], EstadoActual) :-
 ```
 ## Pruebas
-El programa está implementado en **Prolog**. Para ejecutar el autómata, abre el archivo `elvish.pl` en un entorno compatible con Prolog o en una terminal de Prolog. 
+El programa está implementado en **Prolog**. Para ejecutar el autómata, abre el archivo `elvish.pl` en un entorno compatible con Prolog, y escribe la palabra que quieras comprobar sea parte del lenguaje: parma. 
 
 ### Pruebas exitosas
 
-A continuación se presentan las palabras que deberían ser aceptadas por el autómata, ya que están definidas en el lenguaje:
+A continuación se presentan las palabras que deberían ser aceptadas por el autómata (debe arrojar verdadero), ya que están definidas en el lenguaje:
 
 1. Parma
 2. Pelargir
@@ -116,7 +117,7 @@ A continuación se presentan las palabras que deberían ser aceptadas por el aut
 
 ### Pruebas fallidas
 
-Estas son palabras similares a las del idioma, pero que no están incluidas en el lenguaje definido por el autómata. Por lo tanto, el programa debería devolver `falso` al procesarlas:
+Estas son palabras similares a las del idioma, pero que no están incluidas en el lenguaje definido por el autómata. Por lo tanto, el programa debería devolver `falso` o error al procesarlas:
 
 1. Parme
 2. Pelargr
@@ -124,13 +125,6 @@ Estas son palabras similares a las del idioma, pero que no están incluidas en e
 4. Palantiri
 5. Par
 
-Las pruebas en sí tienen el resultado esperado y el resultado que da Prolog. Es importante mencionar que estas funciones a continuación tienen algo similar a este comando: iniciar_automata([p, a, r, m, a]). Esto significa que si desea ejecutar una palabra diferente a las palabras anteriores, ejecute iniciar_automata([palabra).. donde palabra-a-verificar es la palabra escrita en letras, y cada letra está separada por una coma.
-
-Por ejemplo, para probar la palabra *hola*, debes ejecutar:
-
-```
-iniciar_automata([h, o, l, a]).
-```
 ## Analisis
 ### Complejidad Temporal y espacial
 Debido a que el programa utiliza recursion e itera sobre la base de conocimiento, se asimila a un loop. El caso base de la recursión se completa cuando la lista del programa está vacía y no se realiza ninguna operación adicional, asi que se puede decir que el programa tiene una complejidad temporal de O(n). No existe un loop anidado y sin importar cuántos hechos haya en la base de conocimiento, siempre se iterará sobre cada uno de ellos una vez, por lo que, en ese aspecto, es seguro decir que la solución del programa es eficiente. Asimismo la complejidad espacial es de O (n) porque el programa guarda n elementos en la pila mientras recorre la lista.

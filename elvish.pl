@@ -1,4 +1,4 @@
-% Crear la base de conocimientos con estados y caracteres
+% Base de conocimiento (estado incial, siguiente, caracter)
 mover(a, b, p).
 mover(b, c, a).
 mover(b, l, e).
@@ -26,50 +26,50 @@ mover(t, u, h).
 mover(u, v, e).
 mover(v, w, l).
 
-% Estado de aceptación
+% Define estado de aceptación
 estado_de_aceptacion(w).
 
-% Función principal para iniciar el autómata
+% Verifica si los caracteres ingresados estan en la base de conocimiento
+% comienza siempre desde el estado a
 iniciar_automata(ChecarLista) :-
     verificar_automata(ChecarLista, a).
 
-% Caso base: Si la lista está vacía, verifica si es un estado de aceptación
-verificar_automata([], EstadoInicial) :-
-    estado_de_aceptacion(EstadoInicial).
+% Caso base: EL programa continua hasta que ya no mas caracteres, verifica
+% que el estado actual(ultimo) sea el w. 
+verificar_automata([], EstadoActual) :-
+    estado_de_aceptacion(EstadoActual).
 
-% Caso recursivo: Procesa el siguiente símbolo y avanza
-verificar_automata([Simbolo | RestoLista], EstadoInicial) :-
-    mover(EstadoInicial, SiguienteEstado, Simbolo),
+% Caso recursivo: Divide la lista y va recorriendose a el siguiente estado.
+verificar_automata([Simbolo | RestoLista], EstadoActual) :-
+    mover(EstadoActual, SiguienteEstado, Simbolo),
     verificar_automata(RestoLista, SiguienteEstado).
 
 parma :-
     write('Parma'), nl,
-    write('Esperado: verdadero'), nl,
+    write('verdadero'), nl,
     iniciar_automata([p, a, r, m, a]).
 
 pelargir :-
     write('Pelargir'), nl,
-    write('Esperado: verdadero'), nl,
+    write('verdadero'), nl,
     iniciar_automata([p, e, l, a, r, g, i, r]).
 
 peredhel :-
     write('Peredhel'), nl,
-    write('Esperado: verdadero'), nl,
+    write('verdadero'), nl,
     iniciar_automata([p, e, r, e, d, h, e, l]).
 
 palant1ri :-
     write('Palantíri'), nl,
-    write('Esperado: verdadero'), nl,
+    write('verdadero'), nl,
     iniciar_automata([p, a, l, a, n, t, 1, r, i]).
 
 palantiri:-
     write('Palantiri'), nl,
-    write('Esperado: falso'), nl,
+    write('falso'), nl,
     iniciar_automata([p, a, l, a, n, t, i, r, i]).
 
 parf :-
     write('Parf'), nl,
-    write('Esperado: verdadero'), nl,
+    write('verdadero'), nl,
     iniciar_automata([p, a, r, f]).
-
-

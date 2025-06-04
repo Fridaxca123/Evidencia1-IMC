@@ -4,11 +4,11 @@
 
 ## Descripción
 
-El lenguaje que yo elegí se llama *Elven*, también conocido como lenguas élficas. Estas lenguas son un conjunto de idiomas ficticios creados por el escritor J.R.R. Tolkien para sus obras, como *El Señor de los Anillos*. "Entre las más destacadas se encuentran el **Quenya** y el **Sindarin**, las cuales están inspiradas en el finlandés, latín y galés". [1]
+La categoría de lenguaje que se me asigno para esta entrega se llama *Elven*, también conocido como lenguas élficas. Estas lenguas son un conjunto de idiomas ficticios creados por el escritor J.R.R. Tolkien para sus obras literarias, como *El Señor de los Anillos*. "Entre las lenguas más destacadas creadas por Tolkien se encuentran el **Quenya** y el **Sindarin**, las cuales están inspiradas en el finlandés, latín y galés". 
 
 ### Palabras modeladas
 
-Las palabras que elegí para modelar en el autómata son las siguientes:
+Las palabras que modelare con mi automata son las siguientes:
 
 - **Parma**: Quenya para "Libro" ("Book").
 - **Pelargir**: Sindarin para "Garth of Royal Ships" ("Puerto de las Naves Reales").
@@ -18,14 +18,7 @@ Las palabras que elegí para modelar en el autómata son las siguientes:
 
 ### DFA vs. NFA
 
-Los autómatas finitos son una de las formas más simples de reconocer patrones [2]. Existen dos tipos principales:
-
-- **DFA (Deterministic Finite Automata)**: Por cada estado y símbolo de entrada, solo existe una transición posible a otro estado.
-- **NFA (Non-Deterministic Finite Automata)**: Permite múltiples transiciones para el mismo símbolo de entrada y acepta transiciones vacías.
-
-Para este proyecto, decidí utilizar un **DFA** porque únicamente necesito que el autómata reconozca cinco palabras específicas. Esto simplifica la implementación, ya que puedo definir una ruta única para cada palabra, haciendo innecesario el uso de un NFA.
-
-Un Automata Finito Deterministico (AFD) consta de:
+Los autómatas finitos son maquinas abstractas que representan procesos secuenciales, con el proposito de formar un entendimiento basico de los lenguajes regulares en la computación. Consisten en estados, transiciones e input simbols, que se procesan de manera individual.  Un Automata Finito Deterministico (AFD) consta de:
 
 -Un **conjunto finito de estados** -> Q
 
@@ -37,7 +30,23 @@ Un Automata Finito Deterministico (AFD) consta de:
 
 -Uno o más **estados finales**.
 
-Se representa gráficamente con un grafo, donde los nodos son los estados y las flechas las transiciones. Cada transición está etiquetada con un símbolo del alfabeto representando su condición para realizar la transición.
+Se representa gráficamente con un grafo, donde los nodos son los estados y las flechas las transiciones. Cada transición está etiquetada con un símbolo del alfabeto representando el input symbol para realizar la transición.
+
+Existen dos tipos principales de automatas finitos:
+
+- **DFA (Deterministic Finite Automata)**: Un automata finito deterministico, tiene como caracteristica que por cada input symbol solo hay un estado resultante, osea una sola transición posible .
+  
+![Autómata](/DFA.png)
+
+Este automata puede producir numeros que comiencen con 1 y le sigan 0. Como podemos observar es un automata finito debido a que solo existe una transición del mismo simbolo por estado. 
+
+- **NFA (Non-Deterministic Finite Automata)**: Un automata finito no deterministico permite múltiples transiciones para el mismo input symbol desde un mismo estado y acepta transiciones vacías.
+
+![Autómata](/NFA.png)
+
+Este automata puede cadenas de este tipo bbabb, también acepta transiciónes nulas. Como podemos observar es un automata finito debido a que existe mas de una transición del mismo simbolo por estado. 
+
+Para este proyecto, implementare el automata para modelar mi lenguaje debido a que este es de Tipo 2 (Gramatica regular). 
 
 ## Modelos
 

@@ -36,13 +36,13 @@ Existen dos tipos principales de automatas finitos:
 
 - **DFA (Deterministic Finite Automata)**: Un automata finito deterministico, tiene como caracteristica que por cada input symbol solo hay un estado resultante, osea una sola transición posible .
   
-![Autómata](/DFA.png)
+![Autómata](/NFA.png)
 
 Este automata puede producir numeros que comiencen con 1 y le sigan 0. Como podemos observar es un automata finito debido a que solo existe una transición del mismo simbolo por estado. 
 
 - **NFA (Non-Deterministic Finite Automata)**: Un automata finito no deterministico permite múltiples transiciones para el mismo input symbol desde un mismo estado y acepta transiciones vacías.
 
-![Autómata](/NFA.png)
+![Autómata](/DFA.png)
 
 Este automata puede cadenas de este tipo bbabb, también acepta transiciónes nulas. Como podemos observar es un automata finito debido a que existe mas de una transición del mismo simbolo por estado. 
 
